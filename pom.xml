@@ -83,7 +83,6 @@
 		<license>
 			<name>GNU Lesser General Public License (LGPL), version 2.1</name>
 			<url>http://www.gnu.org/licenses/lgpl-2.1.html</url>
-			<distribution>repo</distribution>
 		</license>
 	</licenses>
 
@@ -96,8 +95,8 @@
 		<developer>
 			<name>Stefan Vahlgren</name>
 			<email>stefan.vahlgren@loadcoder.com</email>
-			<organization>Sonatype</organization>
-			<organizationUrl>http://www.sonatype.com</organizationUrl>
+			<organization>Loadcoder</organization>
+			<organizationUrl>http://loadcoder.com</organizationUrl>
 		</developer>
 	</developers>
 

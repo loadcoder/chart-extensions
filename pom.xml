@@ -5,7 +5,7 @@
 	<groupId>com.loadcoder</groupId>
 	<artifactId>chart-extensions</artifactId>
 	<name>Chart Extensions</name>
-	<version>1.0.19-SNAPSHOT</version>
+	<version>1.0.19</version>
 	<packaging>jar</packaging>
 	<description>Extensions for the project jfreechart for the needs of Loadcoder project</description>
 

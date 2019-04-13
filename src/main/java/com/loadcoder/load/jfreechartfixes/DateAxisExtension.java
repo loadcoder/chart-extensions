@@ -53,8 +53,12 @@ import org.jfree.data.time.RegularTimePeriod;
 import org.jfree.data.time.Year;
 import org.jfree.ui.RectangleEdge;
 import org.jfree.ui.TextAnchor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class DateAxisExtension extends DateAxis {
+
+	Logger log = LoggerFactory.getLogger(DateAxisExtension.class);
 
 	protected List refreshTicksHorizontal(Graphics2D g2, Rectangle2D dataArea, RectangleEdge edge) {
 		List result = new ArrayList();
@@ -67,20 +71,20 @@ public class DateAxisExtension extends DateAxis {
 		}
 
 		DateTickUnit unit = getTickUnit();
-		
+
 		/*
-		 * jfreechart diff. There is a bug in jfreechart. Following if statement
-		 * will due as a workaround in loadcoder until the bug is properly solved.
+		 * jfreechart diff. There is a bug in jfreechart. Following if statement will
+		 * due as a workaround in loadcoder until the bug is properly solved.
 		 */
 		if (unit.getUnitType().equals(DateTickUnitType.MILLISECOND)) {
-			System.out.println("OutOfMemoryProtection! Should happen very rare!");
+			log.trace("Protection from problem in DateAxis. Can safely be ignored");
 			return result;
 		}
-		
+
 		/*
-		 * These two methods invocations suffers from the bug. The variables
-		 * used to produce the two dates has to be done in a serialization block
-		 * so that they are not updated between the calls.
+		 * These two methods invocations suffers from the bug. The variables used to
+		 * produce the two dates has to be done in a serialization block so that they
+		 * are not updated between the calls.
 		 */
 		Date tickDate = calculateLowestVisibleTickValue(unit);
 		Date upperDate = getMaximumDate();
